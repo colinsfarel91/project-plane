@@ -5,6 +5,7 @@ import { Timer } from './Timer';
 import { Barrier } from './actors/Barrier';
 import { Circuit } from './state/Circuit';
 import { Map } from './actors/Map';
+import { Plane } from './actors/Plane';
 // import { Pacman } from './Pacman';
 
 window.onload = () => {
@@ -37,7 +38,15 @@ window.onload = () => {
     //   race,
     // ];
 
-    let actors: Actor[] = [map, player];
+    const plane = new Plane({
+        initialpos: {x: 10, y: 250},
+        size: {w: 50, h: 100 },
+        speed: 0,
+        color: "red",
+        image_src: ""
+    });
+
+    let actors: Actor[] = [plane];
 
     //Parte del renderizado
     let lastFrame = 0;
